@@ -1,0 +1,53 @@
+//{ Driver Code Starts
+// Initial Template for Java
+
+import java.io.*;
+import java.util.*;
+
+class GFG {
+    public static void main(String args[]) throws IOException {
+        BufferedReader read =
+            new BufferedReader(new InputStreamReader(System.in));
+        int t = Integer.parseInt(read.readLine());
+        while (t-- > 0) {
+            String S[] = read.readLine().split(" ");
+            int p[] = new int[2];
+            int q[] = new int[2];
+            int r[] = new int[2];
+            int s[] = new int[2];
+            p[0] = Integer.parseInt(S[0]);
+            p[1] = Integer.parseInt(S[1]);
+            q[0] = Integer.parseInt(S[2]);
+            q[1] = Integer.parseInt(S[3]);
+            r[0] = Integer.parseInt(S[4]);
+            r[1] = Integer.parseInt(S[5]);
+            s[0] = Integer.parseInt(S[6]);
+            s[1] = Integer.parseInt(S[7]);
+            Solution ob = new Solution();
+            int ans = ob.doOverlap(p, q, r, s);
+            System.out.println(ans);
+        }
+    }
+}
+// } Driver Code Ends
+
+
+// User function Template for Java
+
+class Solution {
+    int doOverlap(int L1[], int R1[], int L2[], int R2[]) {
+        // code here
+        int x1=R1[0];
+        int y1=R1[1];
+        int x2=L1[0];
+        int y2=L1[1];
+        // coordinates of 2nd rectangle
+        int x3=R2[0];
+        int y3=R2[1];
+        int x4=L2[0];
+        int y4=L2[1];
+       if(y1>y4 || y3>y2 || x2>x3 || x4>x1)return 0;
+      
+      return 1;
+    }
+};

@@ -22,6 +22,7 @@ class GfG {
 
 class Solution {
     public long getCount(int n) {
+        
         if(n==1)    return 10;
         long prev[] = new long[10], cur[] = new long[10], ans=0;
         Arrays.fill(prev,1);
